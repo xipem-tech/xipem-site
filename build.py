@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Builds the static xipem.com site into public/ (upload its contents to
-Hostinger's public_html).
+"""Builds the static xipem.com site into docs/ (served by GitHub Pages from
+main /docs; commit docs/ after building).
 
 Pages are Markdown in src/ (a small subset: headings, paragraphs, bullet
 lists, tables, **bold**, `code`, [links](url), bare https:// links).
@@ -20,8 +20,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
-OUT = ROOT / "public"
-STATIC = ["style.css", "app-ads.txt", "robots.txt"]
+OUT = ROOT / "docs"
+STATIC = ["style.css", "app-ads.txt", "robots.txt", "CNAME", ".nojekyll"]
 
 
 def inline(text: str) -> str:

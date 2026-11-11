@@ -81,7 +81,9 @@ def md_to_html(md: str) -> tuple[str, str]:
             t += [f"<th>{inline(c.strip())}</th>" for c in head]
             t.append("</tr></thead><tbody>")
             for r in data:
-                t.append("<tr>" + "".join(f"<td>{inline(c.strip())}</td>" for c in r) + "</tr>")
+                t.append("<tr>" + "".join(
+                    f'<td data-label="{html.escape(h.strip())}">{inline(c.strip())}</td>'
+                    for h, c in zip(head, r)) + "</tr>")
             t.append("</tbody></table></div>")
             body.append("".join(t))
             continue

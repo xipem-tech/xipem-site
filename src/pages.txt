@@ -1,0 +1,2 @@
+# target = Markdown source (only the part after the first '---' line is published)
+games/monlings/privacy = ../monlings/docs/privacy-policy.md
